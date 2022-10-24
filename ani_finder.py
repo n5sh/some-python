@@ -14,17 +14,17 @@ def find_anime():
     global someSoup
     someSoup = BeautifulSoup(req_answer.content, 'html.parser')
     # print(search_url)
-    
+
     if input("show request answer? yes/no:\n") == "yes":
         print(req_answer.status_code)
-    
+
     if input("show the content of a response? yes/no\n") == "yes":
         print(req_answer.content)
         print(type(req_answer.content))
-    
+
     if input("make content look pretty? yes/no\n") == "yes":
         print(someSoup.prettify())
-    
+
     if input("what about children tags? yes/no\n") == "yes":
         print(type(someSoup.children))
         print(list(someSoup.children))
@@ -66,11 +66,8 @@ def get_details(someSoup):
 
     print("\nRating: ", site_rating.find("span").getText())
 
-    print("\nTags:\n",
-        anime_tags,
-    )
+    print("\nTags:\n", anime_tags)
 
 
 if __name__ == "__main__":
     find_anime()
-
