@@ -46,12 +46,14 @@ def get_details(someSoup):
     when_drawn = someSoup.find("span", {"class": "iconYear"})
     site_rating = someSoup.find("div", {"class": "avgRating"})
     tags_soup = someSoup.find("div", {"class": "tags"})
-    anime_tags = tags_soup.find("ul").getText().replace("\n\n\n\n", "\n").replace("\n", " ").strip()
+    anime_tags = tags_soup.find("ul").getText().replace(
+        "\n\n\n\n", "\n").replace("\n", " ").strip()
 
     def print_good_line():
         if int(episodes_number) <= 12:
             print(
-                "Here are {} episodes in this anime, maybe it has more seasons".format(episodes_number),
+                "Here are {} episodes in this anime, maybe it has more seasons".format(
+                    episodes_number),
             )
         else:
             print(
