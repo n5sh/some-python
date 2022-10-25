@@ -1,6 +1,4 @@
-import boto3
-import os
-import datetime
+import boto3, datetime
 
 
 class s3Bucket:
@@ -20,7 +18,7 @@ class s3Bucket:
         else:
             print("S3 bucket has been created!")
 
-
+            
 if __name__ == "__main__":
     date = datetime.datetime.now()
     current_time = "{}{}{}".format(date.month, date.day, date.year)
